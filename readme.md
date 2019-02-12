@@ -1,10 +1,8 @@
 # Old Browser
 
 This plugins helps managing older browsers while visiting a Wordpress prowered web-site.
-It delivers to visitor a proper web page which explains an upgrade of the browser is needed.
-The simple HTML may be supported by any browser.
-
-The HTML template provides some usefull link to users.
+It delivers to visitor a proper web page which the visitor the incompatibility and the process to upgrade their the browser through useful links.
+The simple HTML served may be supported by any browser.
 
 # Plugin description
 
@@ -34,6 +32,5 @@ The following features are not included
 	Wordpress >= 4.9.9 (untested with earlier version)
 
 # Authors
-[La Drôme Laboratoire](https://github.com/ladromelaboratoire)
-[Sosandroid](https://github.com/sosandroid)
+Provided by [La Drôme Laboratoire](https://github.com/ladromelaboratoire)
 
