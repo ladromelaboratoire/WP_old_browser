@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) or die();
 /**
  * Plugin Name: Old Browser
- * Plugin URI:  
+ * Plugin URI:  https://github.com/ladromelaboratoire/old_browser
  * Description: Redirect old browsers to a simple HTML page helping visitor to upgrade its browser
  * Version:     1.0.0
  * Author:      La Drome Laboratoire
