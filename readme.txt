@@ -6,13 +6,13 @@ Tested up to: 5.0.3
 Stable tag: 1.0.0
 Requires PHP: 7.2
 
-One usefull redirection plugin for wordpress to address older browsers properly giving the visitor an helpfull message. This ask th user to upgrade its browser if possible giving the links.
+Redirection wordpress plugin to address older browsers properly giving the visitor an helpful message. The page suggest the user to upgrade its browser if possible giving the links.
 
 == Description ==
 
 = Old Browser =
 
-This plugin deliver a simple basic HTML page to visitors using old browsers. The rules are matches against user agent. It uses regexp to recover browser name and version. 
+This plugin deliver a basic HTML page to visitors using old browsers. The rules are matched against user agent. It uses regexp to recover browser name and version. The plugin has been developped using the KISS principle : do the job efficiently, simply and silently. That means no admin page, no database use.
 
 At this time, is able to deliver French and English (default).
 
@@ -26,7 +26,7 @@ If the browser does not meet the minimum requirements set, the plugin serves the
 
 = What's Next =
 
-This plugin does not have any admin page. To update the behavior, you need to dig into the code. Sorry for that.
+To update the behavior, you need to dig into the code. Sorry for that.
 To modify your messages and logo, you need is modifying files in ./public folder
 To support more language, you need to add the files in ./public and modify the old_browser_get_lang() function in main PHP file
 To modify the redirect rules, you need to update ./include/browsers.php
