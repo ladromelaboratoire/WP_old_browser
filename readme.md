@@ -4,6 +4,8 @@ This plugins helps managing older browsers while visiting a Wordpress prowered w
 It delivers to visitor a proper web page which explain the incompatibility and the process to upgrade the the web-browser through useful links.
 The simple HTML served may be supported by any browser.
 
+It has been developped according to [KISS principle](https://en.wikipedia.org/wiki/KISS_principle) : do the job simply, efficiently, silently. That means no admin page, no database use.
+
 # Plugin description
 
 ## Revision history
@@ -23,8 +25,6 @@ The following features are not included
 ## To do
 
  - Add support for more languages
- - Add admin page
- - Add rules update from admin
 
 # Dependencies
 
