@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
  * Plugin Name: Old Browser
  * Plugin URI:  https://github.com/ladromelaboratoire/old_browser
  * Description: Redirect old browsers to a simple HTML page helping visitor to upgrade its browser
- * Version:     1.0.1
+ * Version:     1.1.0
  * Author:      La Drome Laboratoire
  * Author URI:  https://www.ladromelaboratoire.fr
  * License:     GPL2
@@ -16,34 +16,41 @@ defined( 'ABSPATH' ) or die();
  define("OB_VERSION", "1.0.0");
  define("OB_BROWSER_ARRAY", "includes/browsers.php");
  define("OB_STRINGS_ARRAY", "includes/strings.php");
+ define("OB_REDIRECT_PATH", "not_supported");
  
  //========== Plugin activation =================
  
- function activate_old_browser() {
-	 
-	 add_action('template_redirect', 'old_browser_headers', 1 );
+ function OB_activate() {
+	 //template_redirect - old one
+	 add_action('send_headers', 'OB_headers', 1 );
  }
- register_activation_hook( __FILE__, 'activate_old_browser');
+ register_activation_hook( __FILE__, 'OB_activate');
  
  
- function deactivate_old_browser() {
-	 
-	 remove_action('template_redirect', 'old_browser_headers', 1 );
+ function OB_deactivate() {
+	 //template_redirect - old one
+	 remove_action('send_headers', 'OB_headers', 1 );
  }
- register_deactivation_hook( __FILE__, 'deactivate_old_browser');
+ register_deactivation_hook( __FILE__, 'OB_deactivate');
  
  //============= Plugin work force ===============
  
 
-function old_browser_headers () {
-	if (old_browser_need_redirect()) {
-		old_browser_send_page();
-		exit;
+function OB_headers () {
+	if (OB_need_redirect()) {
+		if (OB_query_string()) {
+			OB_send_page();
+			exit;
+		}
+		else {
+			wp_redirect(get_bloginfo('url')."/".OB_REDIRECT_PATH);
+			exit;
+		}
 	}
 }
-add_action('template_redirect', 'old_browser_headers', 1 );
+add_action('send_headers', 'OB_headers', 1 );
 
-function old_browser_need_redirect() {
+function OB_need_redirect() {
 	require_once(plugin_dir_path( __FILE__ ) . OB_BROWSER_ARRAY);
 	
 	$useragent = $_SERVER['HTTP_USER_AGENT'];
@@ -61,7 +68,7 @@ function old_browser_need_redirect() {
 	return false;
 }
 
-function old_browser_get_lang() {
+function OB_get_lang() {
 	$lang_string = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	switch($lang_string) {
 		case 'fr':
@@ -74,7 +81,7 @@ function old_browser_get_lang() {
 	//more languages to be added
 }
 
-function old_browser_get_logouri() {
+function OB_get_logouri() {
 	if (defined('WP_CONTENT_URL')) {
 		//easiest way
 		return WP_CONTENT_URL . "/plugins/old_browser/public/logo/logo.png";
@@ -89,13 +96,25 @@ function old_browser_get_logouri() {
 	}
 }
 
-function old_browser_get_page() {
-	return file_get_contents(plugin_dir_path( __FILE__ ) . "/public/" .  old_browser_get_lang() . "/index.htm");
+function OB_get_page() {
+	return file_get_contents(plugin_dir_path( __FILE__ ) . "/public/" .  OB_get_lang() . "/index.htm");
 }
 
-function old_browser_send_page() {
+function OB_send_page() {
 	require_once(plugin_dir_path( __FILE__ ) . OB_STRINGS_ARRAY);
-	echo preg_replace($strings["pattern"], $strings["repl"], old_browser_get_page());
+	echo preg_replace($strings["pattern"], $strings["repl"], OB_get_page());
 	exit;
+}
+
+function OB_query_string() {
+	$uri = $_SERVER['REQUEST_URI'];
+	
+	if (preg_match("/".OB_REDIRECT_PATH."/", $uri) == 1) {
+		//we are on a redirect case
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 ?>

@@ -11,6 +11,7 @@ It has been developped according to [KISS principle](https://en.wikipedia.org/wi
 ## Revision history
 	v1.0.0	2019-02-12	First release of the plugin
 	v1.0.1	2019-02-14	Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
+	v1.1.0	2019-02-14	Modify Old browsers handling by 1/ redirecting to a specific path and 2/ serve the simple HTML to visitor. This alows usage with caching system - Normalize functions naming
 	
 	
 ## Features
@@ -18,6 +19,7 @@ The following features are included
  - Filters on the User-Agent basis
  - Filters by Browser & by version
  - Delivers message in French or English
+ - Support caching by redirecting first to a "not_supported" path
 
 The following features are not included
  - Admin page

@@ -26,9 +26,9 @@ If the browser does not meet the minimum requirements set, the plugin serves the
 
 = What's Next =
 
-To update the behavior, you need to dig into the code. Sorry for that.
+To update the behavior, you need to dig into the code.
 To modify your messages and logo, you need is modifying files in ./public folder
-To support more language, you need to add the files in ./public and modify the old_browser_get_lang() function in main PHP file
+To support more language, you need to add the files in ./public and modify the OB_get_lang() function in main PHP file
 To modify the redirect rules, you need to update ./include/browsers.php
 
 == Installation ==
@@ -42,3 +42,7 @@ To modify the redirect rules, you need to update ./include/browsers.php
 
 ## [1.0.1] - 2019-02-14
 * Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
+
+## [1.1.0] - 2019-02-14
+* Modify Old browsers handling by 1/ redirecting to a specific path and 2/ serve the simple HTML to visitor. This alows usage with caching system
+* Normalize functions naming
