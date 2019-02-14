@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
  * Plugin Name: Old Browser
  * Plugin URI:  https://github.com/ladromelaboratoire/old_browser
  * Description: Redirect old browsers to a simple HTML page helping visitor to upgrade its browser
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      La Drome Laboratoire
  * Author URI:  https://www.ladromelaboratoire.fr
  * License:     GPL2
@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) or die();
  
  define("OB_VERSION", "1.0.0");
  define("OB_BROWSER_ARRAY", "includes/browsers.php");
+ define("OB_STRINGS_ARRAY", "includes/strings.php");
  
  //========== Plugin activation =================
  
@@ -41,7 +42,6 @@ function old_browser_headers () {
 	}
 }
 add_action('template_redirect', 'old_browser_headers', 1 );
-
 
 function old_browser_need_redirect() {
 	require_once(plugin_dir_path( __FILE__ ) . OB_BROWSER_ARRAY);
@@ -75,14 +75,27 @@ function old_browser_get_lang() {
 }
 
 function old_browser_get_logouri() {
-	return get_bloginfo( $show = 'url', $filter = 'raw' ) . "/wp-content/plugins/old_browser/public/logo/logo.png";
+	if (defined('WP_CONTENT_URL')) {
+		//easiest way
+		return WP_CONTENT_URL . "/plugins/old_browser/public/logo/logo.png";
+	}
+	else if (defined ('WP_CONTENT_DIR')){
+		//try to rebuild the public path
+		return get_bloginfo( $show = 'url', $filter = 'raw' ) . WP_CONTENT_DIR . "/plugins/old_browser/public/logo/logo.png";
+	}
+	else {
+		//leave empty overwise
+		return "";
+	}
 }
+
 function old_browser_get_page() {
 	return file_get_contents(plugin_dir_path( __FILE__ ) . "/public/" .  old_browser_get_lang() . "/index.htm");
 }
 
 function old_browser_send_page() {
-	echo preg_replace('/img_uri/', old_browser_get_logouri(), old_browser_get_page());
+	require_once(plugin_dir_path( __FILE__ ) . OB_STRINGS_ARRAY);
+	echo preg_replace($strings["pattern"], $strings["repl"], old_browser_get_page());
 	exit;
 }
 ?>

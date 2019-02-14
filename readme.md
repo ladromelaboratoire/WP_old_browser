@@ -10,6 +10,7 @@ It has been developped according to [KISS principle](https://en.wikipedia.org/wi
 
 ## Revision history
 	v1.0.0	2019-02-12	First release of the plugin
+	v1.0.1	2019-02-14	Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
 	
 	
 ## Features

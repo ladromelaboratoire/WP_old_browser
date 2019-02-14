@@ -3,7 +3,7 @@ Contributors: La Drome laboratoire
 Tags: redirection, older browsers, IE9, IE10
 Requires at least: 4.9.9
 Tested up to: 5.0.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.2
 
 Redirection wordpress plugin to address older browsers properly giving the visitor an helpful message. The page suggest the user to upgrade its browser if possible giving the links.
@@ -39,3 +39,6 @@ To modify the redirect rules, you need to update ./include/browsers.php
 
 ## [1.0.0] - 2019-02-12
 * Inital release
+
+## [1.0.1] - 2019-02-14
+* Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
