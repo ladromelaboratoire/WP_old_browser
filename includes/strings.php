@@ -16,6 +16,6 @@ $strings["pattern"][] = "/logo_url/";
 
 $strings["repl"][] = get_bloginfo('name');
 $strings["repl"][] = get_bloginfo('url');
-$strings["repl"][] = old_browser_get_logouri();
+$strings["repl"][] = OB_get_logouri();
 
 ?>
