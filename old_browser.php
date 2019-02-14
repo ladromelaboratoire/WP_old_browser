@@ -35,7 +35,11 @@ defined( 'ABSPATH' ) or die();
  
  //============= Plugin work force ===============
  
-
+/*
+ *	Check if the user has a proper browser
+ *	Check if the query string is a redirect to not_supported
+ *	Serve page or redirect
+ */
 function OB_headers () {
 	if (OB_need_redirect()) {
 		if (OB_query_string()) {
@@ -50,6 +54,10 @@ function OB_headers () {
 }
 add_action('send_headers', 'OB_headers', 1 );
 
+/*
+ *	Check browser requirements
+ *	
+ */
 function OB_need_redirect() {
 	require_once(plugin_dir_path( __FILE__ ) . OB_BROWSER_ARRAY);
 	
@@ -68,6 +76,10 @@ function OB_need_redirect() {
 	return false;
 }
 
+/*
+ *	Get browser main language
+ *	
+ */
 function OB_get_lang() {
 	$lang_string = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	switch($lang_string) {
@@ -81,6 +93,10 @@ function OB_get_lang() {
 	//more languages to be added
 }
 
+/*
+ *	Get URI logo to adapt into HTML template
+ *	
+ */
 function OB_get_logouri() {
 	if (defined('WP_CONTENT_URL')) {
 		//easiest way
@@ -96,16 +112,28 @@ function OB_get_logouri() {
 	}
 }
 
+/*
+ *	Get HTML template on local path
+ *	
+ */
 function OB_get_page() {
 	return file_get_contents(plugin_dir_path( __FILE__ ) . "/public/" .  OB_get_lang() . "/index.htm");
 }
 
+/*
+ *	Send page
+ *	
+ */
 function OB_send_page() {
 	require_once(plugin_dir_path( __FILE__ ) . OB_STRINGS_ARRAY);
 	echo preg_replace($strings["pattern"], $strings["repl"], OB_get_page());
 	exit;
 }
 
+/*
+ *	Search query string to detect not_supported redirection
+ *	
+ */
 function OB_query_string() {
 	$uri = $_SERVER['REQUEST_URI'];
 	
