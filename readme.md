@@ -1,10 +1,10 @@
-# Old Browser
+# WP Old Browser
 
 This plugins helps managing older browsers while visiting a Wordpress prowered web-site.
 It delivers to visitor a proper web page which explain the incompatibility and the process to upgrade the the web-browser through useful links.
 The simple HTML served may be supported by any browser.
 
-It has been developped according to [KISS principle](https://en.wikipedia.org/wiki/KISS_principle) : do the job simply, efficiently, silently. That means no admin page, no database use.
+It has been developped to do the job simply, efficiently, silently. That means no admin page, no database use.
 
 # Plugin description
 
@@ -12,6 +12,7 @@ It has been developped according to [KISS principle](https://en.wikipedia.org/wi
 	v1.0.0	2019-02-12	First release of the plugin
 	v1.0.1	2019-02-14	Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
 	v1.1.0	2019-02-14	Modify Old browsers handling by 1/ redirecting to a specific path and 2/ serve the simple HTML to visitor. This alows usage with caching system - Normalize functions naming
+	v1.2.0	2019-03-11	Rename plugin for management effectiveness on Git, Modify browsers altenatives
 	
 	
 ## Features
