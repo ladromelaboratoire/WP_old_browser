@@ -7,7 +7,7 @@
   "license": "GPL2",
   "dependencies": {
 	"wordpress": ">=4.9.9",
-	"php": ">=5.4"
+	"php": ">=7.1"
   },
   "keywords": ["Wordpress", "plugin", "redirection", "browser"],
   "repository": "github:ladromelaboratoire/WP_old_browser"
