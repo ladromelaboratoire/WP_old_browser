@@ -1,4 +1,4 @@
-=== Old Browser ===
+=== WP Old Browser ===
 Contributors: La Drome laboratoire
 Tags: redirection, older browsers, IE9, IE10
 Requires at least: 4.9.9
@@ -10,7 +10,7 @@ Redirection wordpress plugin to address older browsers properly giving the visit
 
 == Description ==
 
-= Old Browser =
+= WP Old Browser =
 
 This plugin deliver a basic HTML page to visitors using old browsers. The rules are matched against user agent. It uses regexp to recover browser name and version. The plugin has been developped using the KISS principle : do the job efficiently, simply and silently. That means no admin page, no database use.
 
@@ -46,3 +46,7 @@ To modify the redirect rules, you need to update ./include/browsers.php
 ## [1.1.0] - 2019-02-14
 * Modify Old browsers handling by 1/ redirecting to a specific path and 2/ serve the simple HTML to visitor. This alows usage with caching system
 * Normalize functions naming
+
+## [1.2.0] - 2019-03-11
+* Modify plugin name for Git management efficiency
+* Add/remove some browsers alternatives
