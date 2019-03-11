@@ -1,3 +1,5 @@
 <?php
-// Silence is golden.
+// You may look for something ?
+header('Location: https://www.qwant.com');
+exit;
 ?>

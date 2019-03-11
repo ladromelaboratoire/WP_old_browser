@@ -50,3 +50,6 @@ To modify the redirect rules, you need to update ./include/browsers.php
 ## [1.2.0] - 2019-03-11
 * Modify plugin name for Git management efficiency
 * Add/remove some browsers alternatives
+
+## [1.2.1] - 2019-03-11
+* Security : redirection for script kiddies

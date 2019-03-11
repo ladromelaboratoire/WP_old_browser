@@ -13,6 +13,7 @@ It has been developped to do the job simply, efficiently, silently. That means n
 	v1.0.1	2019-02-14	Update old_browser_get_logouri() to support non standard content path, update template fill-in to work on any wordpress instance, create a template
 	v1.1.0	2019-02-14	Modify Old browsers handling by 1/ redirecting to a specific path and 2/ serve the simple HTML to visitor. This alows usage with caching system - Normalize functions naming
 	v1.2.0	2019-03-11	Rename plugin for management effectiveness on Git, Modify browsers altenatives
+	v1.2.1	2019-03-11	Change index.php files to redirect script kiddies
 	
 	
 ## Features
