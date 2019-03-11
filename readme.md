@@ -1,7 +1,7 @@
 # WP Old Browser
 
-This plugins helps managing older browsers while visiting a Wordpress prowered web-site.
-It delivers to visitor a proper web page which explain the incompatibility and the process to upgrade the web-browser through useful links.
+This plugins helps managing older browsers while visiting a Wordpress powered web-site.
+It delivers to visitor a proper HTML web page which explain the incompatibility and the process to upgrade the web-browser through useful links.
 The simple HTML served may be supported by any browser.
 
 It has been developped to do the job simply, efficiently, silently. That means no admin page, no database use.
