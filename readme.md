@@ -30,6 +30,7 @@ The following features are not included
 ## To do
 
  - Add support for more languages
+ - Add JS Browser detection to handle Varnish HTTP Cache
 
 # Dependencies
 
