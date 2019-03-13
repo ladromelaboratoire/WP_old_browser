@@ -1,0 +1,23 @@
+{
+  "name": "WP_old_browser",
+  "version": "1.2.1",
+  "type": "wordpress-plugin",
+  "description": "Redirection wordpress plugin to address older browsers compatibility issues. It redirect them to a static page and provides alternatives",
+  "homepage": "https://github.com/ladromelaboratoire/WP_old_browser",
+  "authors": [
+	{
+	"name":"La Drôme Laboratoire",
+	"email":"",
+	"homepage": "https://github.com/ladromelaboratoire",
+	"role":"developer"
+	}
+	],
+  "license": "GPL-2.0",
+  "require": {
+	"wordpress": ">=4.9.9",
+	"php": ">=7.1",
+	"composer/installers": "~1.0"
+  },
+  "keywords": ["Wordpress", "wp", "plugin", "wordpres-plugin", "redirection", "browser"],
+  "repository": "github:ladromelaboratoire/WP_old_browser"
+}
